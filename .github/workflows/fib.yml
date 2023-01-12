@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Buildx set-up
         id: buildx
@@ -32,7 +32,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.GIT_TOKEN }}
           
       - name: Docker meta
         id: meta
